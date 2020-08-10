@@ -7,8 +7,7 @@ b)la edad promedio en total.
 c)el hombre mas pesado.
 pedir datos por prompt y mostrar por document.write o console.log
 */
-function mostrar()
-{
+function mostrar() {
 	let i = 0;
 	let cantidadPersonas = 5;
 	let nombre;
@@ -23,39 +22,33 @@ function mostrar()
 	let nombreMasPesado = "No ingresaron hombres";
 
 
-	for(i;i<cantidadPersonas; i++)
-	{
+	for (i; i < cantidadPersonas; i++) {
 		nombre = prompt("Ingrese nombre");
 
 		//Validar peso != 0
-		do
-		{
+		do {
 			peso = parseFloat(prompt("Ingrese peso"));
 		}
-		
-		while(peso == 0 || isNaN(peso) == true){}
+
+		while (peso == 0 || isNaN(peso) == true) { }
 
 		//Validar sexo f o m
-		do
-		{
+		do {
 			sexo = prompt("Ingrese sexo: f/m").toLowerCase(sexo);
 		}
-		while(!(sexo== 'f' || sexo == 'm'))
+		while (!(sexo == 'f' || sexo == 'm'))
 
-		do
-		{
+		do {
 			edad = parseInt(prompt("Ingrese edad"));
 		}
-		while(isNaN(edad) == true){}
+		while (isNaN(edad) == true) { }
 
-		switch(sexo)
-		{
+		switch (sexo) {
 			case 'f':
 				contadorMujeres++;
 				break;
 			case 'm':
-				if(FlagMayorPesoM == 0 || peso > mayorPesoM)
-				{
+				if (FlagMayorPesoM == 0 || peso > mayorPesoM) {
 					mayorPesoM = peso;
 					FlagMayorPesoM = 1;
 					nombreMasPesado = nombre;
@@ -63,19 +56,20 @@ function mostrar()
 				break;
 			default:
 				console.log("No aplica");
-				break;		
+				break;
 
 
 		}
 
 
-		sumaEdades = sumaEdades + edad;
-		promedioEdades = sumaEdades/cantidadPersonas;
 
-
-		console.log("La cantidad de mujeres es igual a: " + contadorMujeres);
-		console.log("El promedio es igual a: " + promedioEdades);
-		console.log("El mayor peso masculino es: " + mayorPesoM + "y su nombre es " + nombreMasPesado);
 
 	}// FIN FOR
+	sumaEdades = sumaEdades + edad;
+	promedioEdades = sumaEdades / cantidadPersonas;
+
+
+	console.log("La cantidad de mujeres es igual a: " + contadorMujeres);
+	console.log("El promedio es igual a: " + promedioEdades);
+	console.log("El mayor peso masculino es: " + mayorPesoM + "y su nombre es " + nombreMasPesado);
 }//FIN
