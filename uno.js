@@ -38,7 +38,7 @@ function mostrar()
 		//Validar sexo f o m
 		do
 		{
-			sexo = prompt("Ingrese sexo: f/m");
+			sexo = prompt("Ingrese sexo: f/m").toLowerCase(sexo);
 		}
 		while(!(sexo== 'f' || sexo == 'm'))
 
